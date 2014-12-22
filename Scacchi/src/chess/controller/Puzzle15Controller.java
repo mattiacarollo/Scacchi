@@ -23,18 +23,5 @@ public class Puzzle15Controller implements Controller {
 			view.showSolvedDialog();
 	}
 
-	@Override
-	public void giveHint() {
-		//solver.step();
-		if (mover.isSolved())
-			view.showSolvedDialog();
-	}
-
-	@Override
-	public void randomize() {
-		do {
-			mover.randomize();
-		}
-		while (mover.isSolved());
-	}
+	
 }

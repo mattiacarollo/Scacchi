@@ -10,7 +10,7 @@ package chess;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-import chess.view.Puzzle15Frame;
+import chess.view.ScacchiFrame;
 
 public class Main
 {
@@ -24,9 +24,7 @@ public class Main
 
 			@Override
 			public void run() {
-				JFrame frame = new Puzzle15Frame();
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);				
-				frame.setVisible(true);
+				new ScacchiFrame();
 			}
 		});
 	}

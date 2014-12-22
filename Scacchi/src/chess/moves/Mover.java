@@ -17,7 +17,4 @@ public class Mover {
 		model.setConfiguration(new Rules(model.getConfiguration()).afterMovingAt(x, y));
 	}
 
-	public void randomize() {
-		model.setConfiguration(new Rules(model.getConfiguration()).randomize(1000));
-	}
 }

@@ -1,5 +1,6 @@
 package chess.view;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +21,7 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 	private final JFrame frame;
 	private final Model model;
 	private Controller controller;
-	private final JButton[][] buttons = new JButton[4][4];
+	private final JButton[][] buttons = new JButton[8][8];
 
 	public TilesPanel(Model model, JFrame frame) {
 		this.frame = frame;
@@ -37,15 +38,29 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 	}
 
 	private void createButtons() {
-		setLayout(new GridLayout(4, 4));
-
-		for (int y = 0; y < 4; y++)
-			for (int x = 0; x < 4; x++)
-				add(buttons[x][y] = mkButton(x, y, model.at(x, y)));
+		setLayout(new GridLayout(8, 8));
+		int color = 0; // 0 white, 1 black
+		
+		for (int y = 0; y < 8; y++){			
+			for (int x = 0; x < 8; x++){				
+				add(buttons[x][y] = mkButton(x, y, model.at(x, y), color));
+				// cambio colore
+				color= 1 - color;
+			}
+			//cambio colore riga
+			color= 1 - color;
+		}
 	}
 
-	private JButton mkButton(final int x, final int y, int value) {
+	private JButton mkButton(final int x, final int y, int value, int color) {
 		JButton button = new JButton(value == 0 ? "" : String.valueOf(value));
+		
+		//assegno colore casella
+		if (color == 0)
+			button.setBackground(Color.WHITE);
+		else
+			button.setBackground(Color.BLACK);
+			
 		button.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent arg0) {
 	        	if (controller != null)
@@ -62,9 +77,12 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 	}
 
 	@Override
+	//controlla se la casella affianco è vuota
+	//allora la scambia, altrimenti non fa nulla
+	//nel model corrisponde al metodo "swap()" file:LongBackedConfiguration.java
 	public void onConfigurationChange() {
-		for (int y = 0; y < 4; y++)
-			for (int x = 0; x < 4; x++)
+		for (int y = 0; y < 8; y++)
+			for (int x = 0; x < 8; x++)
 				buttons[x][y].setText(model.at(x, y) == 0 ?
 					"" : String.valueOf(model.at(x, y)));
 	}

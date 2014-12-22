@@ -13,6 +13,7 @@ public class Rules {
 		this.configuration = configuration;
 	}
 
+	//servirà per controllare se la partita è vinta da qualcuno (es. scacco matto, ecc..)
 	public boolean isSolved() {
 		int value = 1;
 		for (int y = 0; y < 4; y++)
@@ -21,13 +22,6 @@ public class Rules {
 					return false;
 
 		return true;
-	}
-
-	public Configuration randomize(int howManyTimes) {
-		if (howManyTimes <= 0)
-			return configuration;
-		else
-			return new Rules(afterMovingAt(random.nextInt(4), random.nextInt(4))).randomize(howManyTimes - 1);
 	}
 
 	public Configuration afterMovingAt(int x, int y) {
