@@ -31,6 +31,7 @@ public class Main
 				JFrame frame = new Puzzle15Frame();
 				//alalal
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				// ballo sto commento
 				frame.setVisible(true);
 			}
 		});
