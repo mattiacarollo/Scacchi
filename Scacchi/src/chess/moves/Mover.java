@@ -1,4 +1,4 @@
-package moves;
+package chess.moves;
 
 import chess.model.Model;
 

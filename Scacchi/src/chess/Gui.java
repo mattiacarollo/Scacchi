@@ -79,7 +79,7 @@ public class Gui extends JFrame implements ActionListener
 //		containerPanel.setEnabled(false);
 //		
 //		gamePlan = new GamePlan();
-//		pedine = new Pedine();
+		pedine = new Pedine();
 //		
 //		containerPanel.add(gamePlan, new Integer(0), 0);
 //		containerPanel.add(pedine, new Integer(1), 0);
@@ -87,6 +87,7 @@ public class Gui extends JFrame implements ActionListener
 		//this.add(Prog_Bar,BorderLayout.SOUTH);		
 //		this.add(containerPanel, BorderLayout.CENTER);
 		this.add(gamePlan, BorderLayout.CENTER);
+		this.add(pedine, BorderLayout.CENTER);
 		this.setSize(606,649);
 		this.setJMenuBar(menubar);
 		this.setVisible(true);

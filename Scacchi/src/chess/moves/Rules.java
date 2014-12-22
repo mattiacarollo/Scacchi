@@ -1,4 +1,4 @@
-package moves;
+package chess.moves;
 
 import java.util.Iterator;
 import java.util.Random;
