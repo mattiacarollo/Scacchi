@@ -21,7 +21,6 @@ public class Main
 //		new Gui();
 //	}
 	
-	//prova merge
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -29,9 +28,7 @@ public class Main
 			@Override
 			public void run() {
 				JFrame frame = new Puzzle15Frame();
-				//alalal
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				// ballo sto commento
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);				
 				frame.setVisible(true);
 			}
 		});
