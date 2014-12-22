@@ -26,6 +26,7 @@ public class Puzzle15Frame extends JFrame {
 		controller.randomize();
 		addControlButtons();
 
+		
 		setIconImage(new ImageIcon("img/puzzle15.jpg").getImage());
 
 		pack();

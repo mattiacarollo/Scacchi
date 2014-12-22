@@ -30,7 +30,6 @@ public class Main
 			public void run() {
 				JFrame frame = new Puzzle15Frame();
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				//Non si sa cosa fa
 				frame.setVisible(true);
 			}
 		});
