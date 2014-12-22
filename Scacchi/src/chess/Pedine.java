@@ -1,4 +1,4 @@
-package com.lzmtt.chess;
+package chess;
 
 import java.awt.*;
 import javax.swing.*;

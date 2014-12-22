@@ -6,7 +6,7 @@
  *  Master: Computer Game Development
  */
 
-package com.lzmtt.chess;
+package chess;
 
 public class Main
 {

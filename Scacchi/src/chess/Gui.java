@@ -2,7 +2,7 @@
  * Creazione della GUI per il piano di gioco
  */
 
-package com.lzmtt.chess;
+package chess;
 
 import java.awt.*;
 import java.awt.event.*;
