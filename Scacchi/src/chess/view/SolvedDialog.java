@@ -24,7 +24,7 @@ public class SolvedDialog extends JDialog {
 		JButton ok = new JButton("OK");
 		ok.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent arg0) {
-	        	controller.init();
+//	        	controller.init();
 				setVisible(false);
 	          }
 	        });

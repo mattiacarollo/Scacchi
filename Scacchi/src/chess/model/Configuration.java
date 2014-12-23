@@ -10,7 +10,7 @@ public interface Configuration {
 	 * @return the label, between 0 and 15. 0 means that the position is empty
 	 */
 
-	int at(int x, int y);
+	String at(int x, int y);
 
 	/**
 	 * Yields a new configuration where a tile has been swapped

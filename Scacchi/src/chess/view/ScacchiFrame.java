@@ -12,7 +12,7 @@ public class ScacchiFrame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	private final TilesModel model = new TilesModel(new LongBackedConfiguration());
-	private final Controller controller;
+//	private final Controller controller;
 	
 	JMenu menu;
 	JMenuItem menuItem;
@@ -30,8 +30,8 @@ public class ScacchiFrame extends JFrame implements ActionListener {
 		setTitle("Gioca a Scacchi");
 
 		View view = addTiles();
-		controller = new Puzzle15Controller(view);
-		controller.init();
+//		controller = new Puzzle15Controller(view);
+//		controller.init();
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
@@ -93,10 +93,7 @@ public class ScacchiFrame extends JFrame implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent e){		
-		try{
-			//Thread stepper = new ThreadProgress(Prog_Bar);
-			//stepper.start();
-			
+		try{			
 			JMenuItem mi = (JMenuItem)(e.getSource());
 			if (mi.getText() == "Nuova Partita"){
 				//.setEnabled(true);

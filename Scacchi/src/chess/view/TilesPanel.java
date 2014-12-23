@@ -54,23 +54,15 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 		for (int y = 0; y < 8; y++){			
 			for (int x = 0; x < 8; x++){
 				add(buttons[x][y] = mkButton(x, y, model.at(x, y), color));
-				// cambio colore
 				color = 1 - color;
 			}
-			//cambio colore riga
+			//cambio colore riga successiva
 			color = 1 - color;
 		}
 	}
 
-	private JButton mkButton(final int x, final int y, int value, int color) {
-		JButton button = new JButton(value == 0 ? "" : String.valueOf(value));
-//		String lalala = new String();
-//		if (value == 0)
-//			lalala = "/pezziNeri/pedone.gif";
-//		if (value == 1)
-//			lalala = "/pezziNeri/pedone.gif";
-//			
-//		JButton button = new JButton(createImageIcon(lalala));
+	private JButton mkButton(final int x, final int y, String pathPedina, int color) {
+		JButton button = new JButton(createImageIcon(pathPedina));
 		
 		//assegno colore casella
 		if (color == 0)
@@ -98,10 +90,10 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 	//allora la scambia, altrimenti non fa nulla
 	//nel model corrisponde al metodo "swap()" file:LongBackedConfiguration.java
 	public void onConfigurationChange() {
-		for (int y = 0; y < 8; y++)
-			for (int x = 0; x < 8; x++)
-				buttons[x][y].setText(model.at(x, y) == 0 ?
-					"" : String.valueOf(model.at(x, y)));
+//		for (int y = 0; y < 8; y++)
+//			for (int x = 0; x < 8; x++)
+//				buttons[x][y].setText(model.at(x, y) == 0 ?
+//					"" : String.valueOf(model.at(x, y)));
 	}
 
 	@Override

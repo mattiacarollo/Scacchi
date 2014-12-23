@@ -17,9 +17,5 @@ public class Mover {
 	public void moveAt(int x, int y) {
 		model.setConfiguration(new Rules(model.getConfiguration()).afterMovingAt(x, y));
 	}
-	
-	public void init() {
-		model.setConfiguration(new Rules(model.getConfiguration()).init(1000));
-	}
 
 }

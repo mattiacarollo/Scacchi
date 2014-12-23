@@ -22,8 +22,9 @@ public class ArrayBackedConfiguration extends AbstractConfiguration {
 	}
 
 	@Override
-	public int at(int x, int y) {
-		return tiles[y][x];
+	public String at(int x, int y) {
+		//return tiles[y][x];
+		return pedina_xy[x][y];
 	}
 
 	private void set(int x, int y, int value) {
@@ -34,10 +35,10 @@ public class ArrayBackedConfiguration extends AbstractConfiguration {
 	public Configuration swap(int fromX, int fromY, int intoX, int intoY) {
 		ArrayBackedConfiguration result = new ArrayBackedConfiguration(tiles);
 
-		int intoValue = at(intoX, intoY);
-		int fromValue = at(fromX, fromY);
-		result.set(intoX, intoY, fromValue);
-		result.set(fromX, fromY, intoValue);
+//		int intoValue = at(intoX, intoY);
+//		int fromValue = at(fromX, fromY);
+//		result.set(intoX, intoY, fromValue);
+//		result.set(fromX, fromY, intoValue);
 
 		return result;
 	}

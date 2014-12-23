@@ -1,5 +1,6 @@
 package chess.model;
 
+import chess.model.Configuration;
 import chess.view.View;
 
 public class TilesModel implements Model {
@@ -10,7 +11,7 @@ public class TilesModel implements Model {
 		this.configuration = configuration;
 	}
 
-	public int at(int x, int y) {
+	public String at(int x, int y) {
 		return configuration.at(x, y);
 	}
 
