@@ -15,7 +15,13 @@ public class LongBackedConfiguration extends AbstractConfiguration {
 			for (int x = 0; x < 4; x++)
 				if (x != 3 || y != 3)
 					set(x, y, value++);
-	}
+	}	
+//	public LongBackedConfiguration() {
+//		this.tiles = 0L;
+//						
+//		for (int x = 0; x < 8; x++)
+//			set(x, 1, pedone_nero);
+//	}
 
 	@Override
 	public int at(int x, int y) {

@@ -17,6 +17,8 @@ public class ArrayBackedConfiguration extends AbstractConfiguration {
 			for (int x = 0; x < 4; x++)
 				if (x != 3 || y != 3)
 					set(x, y, value++);
+//		for (int x = 0; x < 8; x++)
+//			set(x, 1, pedone_nero);
 	}
 
 	@Override

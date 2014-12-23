@@ -1,6 +1,8 @@
 package chess.model;
 
 public abstract class AbstractConfiguration implements Configuration {
+	
+	//int pedone_nero = 1;
 
 	@Override
 	public String toString() {

@@ -5,10 +5,9 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import chess.controller.Controller;
@@ -22,6 +21,17 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 	private final Model model;
 	private Controller controller;
 	private final JButton[][] buttons = new JButton[8][8];
+	
+	//Restituisce una ImageIcon, null se il percorso non è valido 
+    private ImageIcon createImageIcon(String path){
+        java.net.URL imgURL = this.getClass().getResource(path);
+        if (imgURL != null){
+            return new ImageIcon(imgURL);
+        }else{
+            System.err.println("File non trovato: "+path);
+            return null;
+        }
+    }
 
 	public TilesPanel(Model model, JFrame frame) {
 		this.frame = frame;
@@ -42,18 +52,25 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 		int color = 0; // 0 white, 1 black
 		
 		for (int y = 0; y < 8; y++){			
-			for (int x = 0; x < 8; x++){				
+			for (int x = 0; x < 8; x++){
 				add(buttons[x][y] = mkButton(x, y, model.at(x, y), color));
 				// cambio colore
-				color= 1 - color;
+				color = 1 - color;
 			}
 			//cambio colore riga
-			color= 1 - color;
+			color = 1 - color;
 		}
 	}
 
 	private JButton mkButton(final int x, final int y, int value, int color) {
 		JButton button = new JButton(value == 0 ? "" : String.valueOf(value));
+//		String lalala = new String();
+//		if (value == 0)
+//			lalala = "/pezziNeri/pedone.gif";
+//		if (value == 1)
+//			lalala = "/pezziNeri/pedone.gif";
+//			
+//		JButton button = new JButton(createImageIcon(lalala));
 		
 		//assegno colore casella
 		if (color == 0)
@@ -95,6 +112,4 @@ public class TilesPanel extends JPanel implements View, ActionListener {
 	public void actionPerformed(ActionEvent e){		
 
 	}
-
-
 }
