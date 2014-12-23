@@ -3,6 +3,7 @@ package chess.moves;
 import java.util.Iterator;
 import java.util.Random;
 
+import chess.moves.Rules;
 import chess.model.Configuration;
 
 public class Rules {
@@ -22,6 +23,13 @@ public class Rules {
 					return false;
 
 		return true;
+	}
+	
+	public Configuration init(int howManyTimes) {
+		if (howManyTimes <= 0)
+			return configuration;
+		else
+			return new Rules(afterMovingAt(random.nextInt(4), random.nextInt(4))).init(howManyTimes - 1);
 	}
 
 	public Configuration afterMovingAt(int x, int y) {

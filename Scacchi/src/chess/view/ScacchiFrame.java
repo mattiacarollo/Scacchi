@@ -31,6 +31,7 @@ public class ScacchiFrame extends JFrame implements ActionListener {
 
 		View view = addTiles();
 		controller = new Puzzle15Controller(view);
+		controller.init();
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);

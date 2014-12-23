@@ -23,5 +23,12 @@ public class Puzzle15Controller implements Controller {
 			view.showSolvedDialog();
 	}
 
+	@Override
+	public void init() {
+		do {
+			mover.init();
+		}
+		while (mover.isSolved());
+	}
 	
 }
